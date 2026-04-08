@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gatcombe Industrial Limited — Industrial Roofing & Cladding Specialists based in Portsmouth, Hampshire. Supply, fit and sub-contract services across the South of England.">
+  <meta name="keywords" content="industrial roofing Portsmouth, cladding contractors Hampshire, roofing specialists South England, industrial cladding, sub-contract roofing">
+  <title>Gatcombe Industrial Limited | Industrial Roofing & Cladding Portsmouth</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&display=swap');
+
+    /* ─── CSS CUSTOM PROPERTIES ─────────────────────────────────── */
+    :root {
+      --black:       #1a1a1a;
+      --green:       #2d5a27;
+      --green-hover: #3a7a32;
+      --white:       #ffffff;
+      --grey-light:  #f7f7f7;
+      --grey-border: #e5e5e5;
+      --font:        'Barlow', sans-serif;
+      --max-width:   1200px;
+      --radius:      0px;
+    }
+
+    /* ─── GLOBAL RESET ──────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── CONTAINER ─────────────────────────────────────────────── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ─── SHARED BUTTON STYLES ───────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      padding: 16px 36px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+
+    .btn-green:hover,
+    .btn-green:focus {
+      background: var(--green-hover);
+      border-color: var(--green-hover);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .btn-outline-white:hover,
+    .btn-outline-white:focus {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* ─── SECTION SPACING ────────────────────────────────────────── */
+    section {
+      padding: 80px 20px;
+    }
+
+    /* ─── FADE-IN ANIMATION ──────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SECTION 1 — HEADER / NAV
+    ═══════════════════════════════════════════════════════════════ */
+
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: var(--white);
+      border-bottom: 2px solid var(--green);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      transition: padding 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      transition: padding 0.3s ease;
+    }
+
+    /* Shrink on scroll */
+    #header.scrolled .header-inner {
+      padding: 8px 0;
+    }
+
+    #header.scrolled .header-logo img {
+      max-height: 40px;
+    }
+
+    /* Logo */
+    .header-logo {
+      flex-shrink: 0;
+    }
+
+    .header-logo img {
+      max-height: 55px;
+      width: auto;
+      transition: max-height 0.3s ease;
+    }
+
+    /* Nav centre + right */
+    .header-nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .header-phone {
+      font-weight: 700;
+      color: var(--green);
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .header-phone:hover {
+      color: var(--green-hover);
+    }
+
+    nav.main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav.main-nav a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    nav.main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--green);
+      transition: width 0.25s ease;
+    }
+
+    nav.main-nav a:hover {
+      color: var(--green);
+    }
+
+    nav.main-nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      flex-shrink: 0;
+      padding: 10px 22px;
+      font-size: 0.85rem;
+    }
+
+    /* ─── HAMBURGER ─────────────────────────────────────────────── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      margin-left: 16px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--black);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ─── MOBILE NAV DRAWER ──────────────────────────────────────── */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--grey-border);
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .mobile-nav.open {
+      max-height: 400px;
+      padding: 16px 0 20px;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      border-bottom: 1px solid var(--grey-border);
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .mobile-nav a:last-of-type {
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--green);
+      background: var(--grey-light);
+    }
+
+    .mobile-nav .btn-green {
+      margin: 16px 20px 0;
+      display: block;
+      text-align: center;
+    }
+
+    .mobile-phone {
+      display: block;
+      padding: 12px 20px;
+      font-weight: 700;
+      color: var(--green);
+      font-size: 1rem;
+      border-bottom: 1px solid var(--grey-border);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SECTION 2 — HERO
+    ═══════════════════════════════════════════════════════════════ */
+
+    #hero {
+      padding: 0;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: var(--black);
+      background-image:
+        linear-gradient(45deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      text-align: center;
+    }
+
+    /* Darker overlay to punch up the depth */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.72);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      padding: 60px 20px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green-hover);
+      margin-bottom: 20px;
+      border: 1px solid var(--green);
+      padding: 6px 16px;
+    }
+
+    .hero-content h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+
+    .hero-content h2 {
+      color: var(--white);
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      margin-top: 16px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── TRUST BADGE STRIP ─────────────────────────────────────── */
+    .trust-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 22px;
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      position: relative;
+    }
+
+    .trust-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 20px;
+      background: var(--green);
+    }
+
+    .trust-item .check {
+      color: var(--green-hover);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SECTION 3 — INTRO / ABOUT STRIP
+    ═══════════════════════════════════════════════════════════════ */
+
+    #intro {
+      background: var(--white);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* Left column */
+    .intro-left h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      color: var(--black);
+    }
+
+    .intro-left h2 span {
+      color: var(--green);
+    }
+
+    .intro-left p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .intro-left p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Right column — info boxes */
+    .intro-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-box {
+      background: var(--grey-light);
+      border-left: 4px solid var(--green);
+      padding: 22px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .info-box h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+
+    .info-box p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #555;
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+
+    @media (max-width: 900px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Header */
+      .header-nav-wrap {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: flex;
+      }
+
+      /* Hero trust strip */
+      .trust-strip {
+        gap: 0;
+      }
+
+      .trust-item {
+        flex: 0 0 50%;
+        padding: 10px 12px;
+        justify-content: center;
+      }
+
+      .trust-item:not(:last-child)::after {
+        display: none;
+      }
+
+      .trust-item:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .trust-item:nth-child(1),
+      .trust-item:nth-child(2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 50px 20px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .btn {
+        text-align: center;
+      }
+
+      .trust-item {
+        flex: 0 0 100%;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .trust-item:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 1 — STICKY HEADER / NAV
+  ═══════════════════════════════════════════════════════════════ -->
+  <header id="header">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a href="#" class="header-logo" aria-label="Gatcombe Industrial Limited — Home">
+          <img
+            src="images/logo.png"
+            alt="Gatcombe Industrial Limited - Industrial Roofing and Cladding Portsmouth"
+          >
+        </a>
+
+        <!-- Desktop nav + phone + CTA -->
+        <div class="header-nav-wrap">
+          <a href="tel:07767228086" class="header-phone" aria-label="Call Gatcombe Industrial">07767 228086</a>
+
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#intro">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <a href="#contact" class="btn btn-green header-cta">Get a Free Quote</a>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile nav drawer -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="tel:07767228086" class="mobile-phone">&#128222; 07767 228086</a>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#intro">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-green">Get a Free Quote</a>
+    </nav>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 2 — HERO
+  ═══════════════════════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-content">
+
+      <span class="hero-eyebrow">Portsmouth, Hampshire</span>
+
+      <h1>Industrial Roofing &amp; Cladding Specialists</h1>
+
+      <h2>Supply, Fit &amp; Sub-Contract Services Across the South of England</h2>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-green">Get a Free Quote</a>
+        <a href="#services" class="btn btn-outline-white">Our Services</a>
+      </div>
+
+      <div class="trust-strip" aria-label="Key credentials">
+        <div class="trust-item">
+          <span class="check">&#10003;</span>
+          <span>Based in Portsmouth</span>
+        </div>
+        <div class="trust-item">
+          <span class="check">&#10003;</span>
+          <span>Supply &amp; Fit Service</span>
+        </div>
+        <div class="trust-item">
+          <span class="check">&#10003;</span>
+          <span>Sub-Contract Available</span>
+        </div>
+        <div class="trust-item">
+          <span class="check">&#10003;</span>
+          <span>All Industrial Sectors</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 3 — INTRO / ABOUT STRIP
+  ═══════════════════════════════════════════════════════════════ -->
+  <section id="intro" aria-labelledby="intro-heading">
+    <div class="container">
+      <div class="intro-grid">
+
+        <!-- Left: text -->
+        <div class="intro-left fade-in">
+          <h2 id="intro-heading">
+            Portsmouth's Industrial Roofing &amp; <span>Cladding Experts</span>
+          </h2>
+          <p>
+            Gatcombe Industrial Limited are specialist industrial roofing and cladding contractors
+            based in Portsmouth, Hampshire. With extensive experience across all aspects of industrial
+            roofing and cladding, we deliver high-quality installations for commercial, industrial and
+            agricultural clients across the South of England.
+          </p>
+          <p>
+            Whether you require a full supply and fit service or an experienced sub-contract team to
+            work alongside your principal contractor, Gatcombe Industrial has the expertise and
+            reliability to deliver. We work on new build and refurbishment projects of all scales,
+            ensuring every job meets the highest standards of quality and safety.
+          </p>
+        </div>
+
+        <!-- Right: info boxes -->
+        <div class="intro-right fade-in" style="transition-delay: 0.15s;">
+
+          <div class="info-box">
+            <h3>Supply &amp; Fit Service</h3>
+            <p>
+              We supply and install all roofing and cladding systems, managing the full process from
+              material procurement through to completed installation.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h3>Sub-Contract Services</h3>
+            <p>
+              Available as an experienced sub-contractor on larger commercial and industrial projects
+              alongside principal contractors and developers.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h3>Free Site Surveys &amp; Quotes</h3>
+            <p>
+              Contact us today for a free no-obligation quote on your industrial roofing or cladding
+              project.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTIONS: services, why-us, gallery, contact, footer to be added -->
+
+  <script>
+    /* ─── HEADER: SCROLL SHRINK ───────────────────────────────── */
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    /* ─── MOBILE MENU TOGGLE ──────────────────────────────────── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile nav when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ─── INTERSECTION OBSERVER: FADE-IN ─────────────────────── */
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      fadeObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
