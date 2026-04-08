@@ -686,6 +686,332 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ═══════════════════════════════════════════════════════════════
+       CONTACT
+    ═══════════════════════════════════════════════════════════════ */
+
+    #contact {
+      background: var(--grey-light);
+    }
+
+    #contact .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    #contact .section-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    #contact .section-header p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 38% 62%;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-left h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .contact-phone {
+      display: block;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .contact-phone:hover {
+      color: var(--green-hover);
+    }
+
+    .contact-email {
+      display: block;
+      color: var(--green);
+      word-break: break-all;
+      margin-bottom: 24px;
+      transition: color 0.2s ease;
+    }
+
+    .contact-email:hover {
+      color: var(--green-hover);
+    }
+
+    .contact-location {
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .contact-coverage {
+      color: #444;
+      font-size: 0.9rem;
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    .contact-info-box {
+      background: var(--green);
+      color: var(--white);
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .contact-info-box strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .contact-info-box ul {
+      list-style: none;
+      line-height: 2;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid var(--grey-border);
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      color: var(--black);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s ease;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background: var(--green-hover);
+    }
+
+    .form-success {
+      display: none;
+      background: var(--green);
+      color: var(--white);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .form-success .success-check {
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .form-success p {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .form-success small {
+      display: block;
+      margin-top: 12px;
+      opacity: 0.7;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════════════════ */
+
+    footer {
+      background: var(--black);
+      padding: 60px 20px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .footer-col p {
+      color: var(--white);
+    }
+
+    .footer-brand-tagline {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand-location {
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    .footer-col h4 {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: var(--white);
+      opacity: 0.7;
+      line-height: 2.2;
+      font-size: 0.9rem;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--green);
+    }
+
+    .footer-phone {
+      display: block;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-phone:hover {
+      color: var(--green);
+    }
+
+    .footer-email {
+      display: block;
+      color: var(--white);
+      opacity: 0.7;
+      font-size: 0.85rem;
+      word-break: break-all;
+      margin-bottom: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-email:hover {
+      opacity: 1;
+    }
+
+    .footer-coverage {
+      opacity: 0.5;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2a2a2a;
+      margin-top: 40px;
+      padding: 20px 0;
+      text-align: center;
+      color: #666;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* ── BACK TO TOP ──────────────────────────────────────────────── */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease, background 0.2s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .back-to-top:hover {
+      background: var(--green-hover);
+    }
   </style>
 </head>
 <body>
@@ -1014,7 +1340,153 @@
     </div>
   </section>
 
-  <!-- contact, footer to be added -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Get a Free Quote</h2>
+        <p>Whether you need a supply &amp; fit service or an experienced sub-contract team, we'd love to hear about your project. Get in touch for a free no-obligation quote.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: contact details -->
+        <div class="contact-left fade-in">
+          <h3>Contact Us Directly</h3>
+          <a href="tel:07767228086" class="contact-phone">07767 228086</a>
+          <a href="mailto:Gatcombeindustriallimited@gmail.com" class="contact-email">Gatcombeindustriallimited@gmail.com</a>
+          <p class="contact-location">Portsmouth, Hampshire</p>
+          <p class="contact-coverage">South of England &amp; Nationwide (Sub-Contract)</p>
+
+          <div class="contact-info-box">
+            <strong>We cover:</strong>
+            <ul>
+              <li>&#10003; New Build Projects</li>
+              <li>&#10003; Refurbishment &amp; Re-Roofing</li>
+              <li>&#10003; Asbestos Replacement</li>
+              <li>&#10003; Sub-Contract Packages</li>
+              <li>&#10003; Commercial &amp; Industrial</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: enquiry form -->
+        <div class="contact-right fade-in">
+          <form id="enquiry-form" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="enquiry">
+            <p style="display:none"><input name="bot-field"></p>
+
+            <div class="form-group">
+              <label for="full-name">Full Name *</label>
+              <input type="text" id="full-name" name="full-name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="company-name">Company Name</label>
+              <input type="text" id="company-name" name="company-name">
+            </div>
+
+            <div class="form-group">
+              <label for="phone-number">Phone Number *</label>
+              <input type="tel" id="phone-number" name="phone-number" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email-address">Email Address *</label>
+              <input type="email" id="email-address" name="email-address" required>
+            </div>
+
+            <div class="form-group">
+              <label for="service-required">Service Required *</label>
+              <select id="service-required" name="service-required" required>
+                <option value="">Please select...</option>
+                <option value="Metal Roof Sheeting">Metal Roof Sheeting</option>
+                <option value="Composite Roof Panels">Composite Roof Panels</option>
+                <option value="Flat Roofing">Flat Roofing</option>
+                <option value="Rainscreen Cladding">Rainscreen Cladding</option>
+                <option value="Wall Cladding">Wall Cladding</option>
+                <option value="Standing Seam Roofing">Standing Seam Roofing</option>
+                <option value="Over-Cladding &amp; Re-Roofing">Over-Cladding &amp; Re-Roofing</option>
+                <option value="Rooflights &amp; Accessories">Rooflights &amp; Accessories</option>
+                <option value="Sub-Contract Services">Sub-Contract Services</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="project-location">Project Location</label>
+              <input type="text" id="project-location" name="project-location">
+            </div>
+
+            <div class="form-group">
+              <label for="project-details">Project Details</label>
+              <textarea id="project-details" name="project-details" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Enquiry &#8594;</button>
+          </form>
+
+          <div id="form-success" class="form-success">
+            <div class="success-check">&#10003;</div>
+            <p>Thank you! We'll be in touch shortly.</p>
+            <small>// On live Netlify deployment, remove preventDefault to enable real submission</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-col fade-in">
+          <img src="images/logo.png" alt="Gatcombe Industrial Limited" style="max-height:50px; filter: brightness(0) invert(1); margin-bottom:16px">
+          <p class="footer-brand-tagline">Industrial Roofing &amp; Cladding Specialists</p>
+          <p class="footer-brand-location">Portsmouth, Hampshire</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col fade-in">
+          <h4>Quick Links</h4>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Get In Touch -->
+        <div class="footer-col fade-in">
+          <h4>Get In Touch</h4>
+          <a href="tel:07767228086" class="footer-phone">07767 228086</a>
+          <a href="mailto:Gatcombeindustriallimited@gmail.com" class="footer-email">Gatcombeindustriallimited@gmail.com</a>
+          <p class="footer-coverage">South of England &amp; Nationwide</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Gatcombe Industrial Limited. All Rights Reserved. | Industrial Roofing &amp; Cladding Contractors | Portsmouth, Hampshire</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#8593;</button>
 
   <script>
     /* ── SCROLL: add .scrolled to header ───────────────────────── */
@@ -1054,6 +1526,29 @@
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+    /* ── FORM: success state on submit ─────────────────────────── */
+    const enquiryForm = document.getElementById('enquiry-form');
+    const formSuccess = document.getElementById('form-success');
+
+    if (enquiryForm) {
+      enquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Remove on live Netlify deployment to enable real submission
+        enquiryForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      });
+    }
+
+    /* ── BACK TO TOP ────────────────────────────────────────────── */
+    const backToTop = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 
 </body>
