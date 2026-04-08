@@ -388,6 +388,155 @@
       font-size: 1rem;
       line-height: 1;
     }
+
+    /* ── FADE-IN ANIMATION ────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       INTRO
+    ═══════════════════════════════════════════════════════════════ */
+
+    #about {
+      background: var(--white);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .intro-left h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--black);
+    }
+
+    .intro-left p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .intro-left p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-card {
+      border-left: 4px solid var(--green);
+      background: var(--grey-light);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+
+    .intro-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .intro-card p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════════════════════════ */
+
+    #services {
+      background: var(--grey-light);
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .services-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .services-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-top: 4px solid var(--green);
+      padding: 28px 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -478,7 +627,104 @@
 
   </section>
 
-  <!-- intro, services, why-us, gallery, contact, footer to be added -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       INTRO
+  ═══════════════════════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="intro-grid">
+
+        <!-- Left: text -->
+        <div class="intro-left fade-in">
+          <h2>Portsmouth's Industrial Roofing &amp; Cladding Experts</h2>
+          <p>Gatcombe Industrial Limited are specialist industrial roofing and cladding contractors based in Portsmouth, Hampshire. With extensive experience across all aspects of industrial roofing and cladding, we deliver high-quality installations for commercial, industrial and agricultural clients across the South of England.</p>
+          <p>Whether you require a full supply and fit service or an experienced sub-contract team to work alongside your principal contractor, Gatcombe Industrial has the expertise and reliability to deliver on new build and refurbishment projects of all scales.</p>
+        </div>
+
+        <!-- Right: cards -->
+        <div class="intro-right fade-in">
+          <div class="intro-card">
+            <h3>Supply &amp; Fit Service</h3>
+            <p>We supply and install all roofing and cladding systems, managing the full process from procurement through to completed installation.</p>
+          </div>
+          <div class="intro-card">
+            <h3>Sub-Contract Services</h3>
+            <p>Available as an experienced sub-contractor on larger commercial and industrial projects alongside principal contractors and developers.</p>
+          </div>
+          <div class="intro-card">
+            <h3>Free Site Surveys &amp; Quotes</h3>
+            <p>Contact us today for a free no-obligation quote on your industrial roofing or cladding project.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+
+      <div class="services-header">
+        <h2>Our Services</h2>
+        <p>Gatcombe Industrial Limited provide industrial roofing and cladding services across Portsmouth, Hampshire and the South of England — offering supply &amp; fit and sub-contract solutions for projects of all sizes.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card fade-in">
+          <h3>Metal Roof Sheeting</h3>
+          <p>Profiled steel and coated metal sheet roofing for industrial and commercial buildings. We carry out full re-sheeting of existing roofs and new build installations using quality coated steel profiles built to withstand harsh weather.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Composite Roof Panels</h3>
+          <p>Insulated composite panel systems including twin-skin and single-skin options for warehouses, factories and industrial units. Excellent thermal performance with fast installation for new build and refurbishment.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Flat Roofing Systems</h3>
+          <p>EPDM rubber membrane, bituminous membrane and liquid waterproofing for low-pitch and flat industrial roofs. Durable, low-maintenance solutions backed by long-term manufacturer warranties.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Rainscreen Cladding</h3>
+          <p>Ventilated rainscreen facade systems providing a weather-resistant outer skin, moisture control and superior thermal performance. Available in aluminium, steel and composite panel finishes.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Wall Cladding</h3>
+          <p>Profiled metal and composite wall cladding for industrial and commercial buildings. Available in a wide range of colours, coatings and finishes combining durability with a clean appearance.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Standing Seam Roofing</h3>
+          <p>Interlocking vertical panel standing seam systems offering a premium, modern finish. A popular choice on new build and high-specification refurbishment projects for their sleek aesthetic and long-term performance.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Over-Cladding &amp; Re-Roofing</h3>
+          <p>Cost-effective over-sheeting and over-cladding including asbestos cement replacement. Improve energy efficiency and weatherproofing with minimal disruption to your operations.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Rooflights &amp; Accessories</h3>
+          <p>Supply and installation of GRP and polycarbonate rooflights, gutters, fascias, soffits and flashings. All colour-matched to your roofing and cladding system.</p>
+        </div>
+
+        <div class="service-card fade-in">
+          <h3>Sub-Contract Services</h3>
+          <p>Experienced roofing and cladding sub-contractor available to principal contractors and developers on larger commercial and industrial projects across the South of England and beyond.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- why-us, gallery, contact, footer to be added -->
 
   <script>
     /* ── SCROLL: add .scrolled to header ───────────────────────── */
@@ -506,6 +752,18 @@
         hamburger.setAttribute('aria-expanded', 'false');
       });
     });
+
+    /* ── FADE-IN: IntersectionObserver ─────────────────────────── */
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
   </script>
 
 </body>
