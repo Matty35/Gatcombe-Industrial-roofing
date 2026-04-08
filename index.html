@@ -264,20 +264,129 @@
       }
     }
 
-    /* ── PLACEHOLDER ──────────────────────────────────────────────── */
-    .placeholder {
-      padding: 80px 20px;
+    /* ═══════════════════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════════════════ */
+
+    #home {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      background: var(--grey-light);
-      border-bottom: 2px dashed var(--grey-border);
+      background-color: #1a1a1a;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+      background-size: 10px 10px;
+      overflow: hidden;
     }
 
-    .placeholder p {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 2px;
+    .hero-accent-bar {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 80px;
+      background: var(--green);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 800;
       text-transform: uppercase;
-      color: #999;
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+
+    .hero-content > p {
+      color: var(--white);
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 16px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .btn-hero-primary {
+      display: inline-block;
+      padding: 16px 36px;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-hero-primary:hover {
+      background: var(--green-hover);
+    }
+
+    .btn-hero-outline {
+      display: inline-block;
+      padding: 16px 36px;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 2px solid var(--white);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-hero-outline:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .trust-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .trust-item {
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .trust-pipe {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1;
     }
   </style>
 </head>
@@ -338,12 +447,38 @@
     </nav>
   </header>
 
-  <!-- Placeholder -->
-  <div class="placeholder">
-    <p>SECTIONS COMING SOON</p>
-  </div>
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════════ -->
+  <section id="home">
 
-  <!-- hero, intro, services, why-us, gallery, contact, footer to be added -->
+    <!-- Green accent bar -->
+    <div class="hero-accent-bar" aria-hidden="true"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <h1>Industrial Roofing &amp; Cladding Specialists</h1>
+      <p>Supply, Fit &amp; Sub-Contract Services Across the South of England</p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-hero-primary">Get a Free Quote</a>
+        <a href="#services" class="btn-hero-outline">Our Services</a>
+      </div>
+
+      <div class="trust-strip">
+        <div class="trust-item">&#10003; Based in Portsmouth</div>
+        <span class="trust-pipe" aria-hidden="true">|</span>
+        <div class="trust-item">&#10003; Supply &amp; Fit Service</div>
+        <span class="trust-pipe" aria-hidden="true">|</span>
+        <div class="trust-item">&#10003; Sub-Contract Available</div>
+        <span class="trust-pipe" aria-hidden="true">|</span>
+        <div class="trust-item">&#10003; All Industrial Sectors</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- intro, services, why-us, gallery, contact, footer to be added -->
 
   <script>
     /* ── SCROLL: add .scrolled to header ───────────────────────── */
